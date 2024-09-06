@@ -1,0 +1,18 @@
+
+<div>
+    <label>Value</label>
+    <input type="text" [(ngModel)]="newvalue.value">
+</div>
+<div>
+    <label>Date</label>
+    <input type="date" [(ngModel)]="newvalue.date">
+</div>
+
+
+    <button (click)="alteraValue()">Atualizar</button>
+
+
+    <p>
+        {{newvalue | json}}
+    </p>
+

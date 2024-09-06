@@ -1,0 +1,42 @@
+
+<form [formGroup]="form">
+  <div>
+    <label for="name" appBgColor>Name</label>
+    <input type="text" formControlName="name" name="name" appFocusNext>
+  </div>
+  <div>
+    <label for="age">Age</label>
+    <input type="text"  formControlName="age" name="age" appFocusNext>
+  </div>
+  <div>
+    <label for="name" appBgColor>Name</label>
+    <input type="text" formControlName="name" name="name" appFocusNext>
+  </div>
+  <div>
+    <label for="age">Age</label>
+    <input type="text"  formControlName="age" name="age" appFocusNext>
+  </div>
+  <div>
+    <label for="name" appBgColor>Name</label>
+    <input type="text" formControlName="name" name="name" appFocusNext>
+  </div>
+  <div>
+    <label for="age">Age</label>
+    <input type="text"  formControlName="age" name="age" appFocusNext>
+  </div>
+</form>
+<button (click)="onSubmit()">Enviar</button>
+
+<div appBgColor>o texto aqui deve modar de cor</div>
+
+
+<button routerLink="/user">open input User</button>
+
+@if(isOpen){
+  <p>ALgo Aqui</p>
+  <app-input-user></app-input-user>
+}
+
+
+
+<router-outlet />
