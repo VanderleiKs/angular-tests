@@ -5,13 +5,22 @@
 </div>
 <div>
     <label>Date</label>
-    <input type="date" [(ngModel)]="newvalue.date">
+    <ngb-datepicker [(ngModel)]="newvalue.date" />
 </div>
-
+<div>
+    <label>Age</label>
+    <input type="text" [(ngModel)]="newvalue.age">
+</div>
 
     <button (click)="alteraValue()">Atualizar</button>
 
 
+    <div>
+        <p> Age: {{newvalue.age}} {{newvalue.age | i18nPlural: count}}</p>
+        <p>Value: {{newvalue.value | titlecase }}</p>
+        <p>Price: {{price | currency }}</p>
+        <p>Percent: {{percent ? (percent | number: '2.2') + '%': ''}}</p>
+    </div>
     <p>
         {{newvalue | json}}
     </p>
