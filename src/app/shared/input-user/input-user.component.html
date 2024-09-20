@@ -5,7 +5,18 @@
 </div>
 <div>
     <label>Date</label>
-    <ngb-datepicker [(ngModel)]="newvalue.date" />
+    <input ngbDatepicker
+        [accept]=""
+        [autoClose]="true"
+        [maxDate]="maxDate"
+        [minDate]="minDate"
+        [(ngModel)]="dataInserida"
+        #d="ngbDatepicker"
+        placeholder="dd/MM/yyyy"
+        (blur)="validateDate()"
+        >
+        <button (click)="d.toggle()">op</button>
+    <!--<ngb-datepicker [(ngModel)]="newvalue.date" />-->
 </div>
 <div>
     <label>Age</label>
@@ -16,7 +27,7 @@
 
 
     <div>
-        <p> Age: {{newvalue.age}} {{newvalue.age | i18nPlural: count}}</p>
+        <p>Age: {{newvalue.age}} {{newvalue.age | i18nPlural: count}}</p>
         <p>Value: {{newvalue.value | titlecase }}</p>
         <p>Price: {{price | currency }}</p>
         <p>Percent: {{percent ? (percent | number: '2.2') + '%': ''}}</p>
@@ -24,4 +35,6 @@
     <p>
         {{newvalue | json}}
     </p>
+
+
 
